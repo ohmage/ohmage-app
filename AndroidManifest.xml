@@ -1,7 +1,11 @@
+<!--
+     Default Manifest for the ohmageApp wrapper apk. If built with ant, the versionCode
+     and versionName will be replaced with the version of ohmageAndroidLib if they are left as 0
+-->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.ohmage.app"
-    android:versionCode="4"
-    android:versionName="2.15.3" >
+    android:versionCode="0"
+    android:versionName="0" >
 
     <uses-sdk
         android:minSdkVersion="8"

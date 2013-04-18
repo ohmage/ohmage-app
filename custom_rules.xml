@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <path id="android.antlibs">
+    <pathelement path="${sdk.dir}/tools/lib/anttasks.jar" />
+  </path>
+
+  <taskdef name="xpath"
+    classname="com.android.ant.XPathTask"
+    classpathref="android.antlibs" />
+
+  <target name="-post-compile">
+    <xpath input="${android.library.reference.1}/AndroidManifest.xml" expression="/manifest/@android:versionName"
+      output="versionName" default="unknown"/>
+    <xpath input="${android.library.reference.1}/AndroidManifest.xml" expression="/manifest/@android:versionCode"
+      output="versionCode" default="unknown"/>
+
+    <replace file="bin/AndroidManifest.xml" token="android:versionCode=&quot;0&quot;" value="android:versionCode=&quot;${versionCode}&quot;" />
+    <replace file="bin/AndroidManifest.xml" token="android:versionName=&quot;0&quot;" value="android:versionName=&quot;${versionName}&quot;" />
+  </target>
+</project>
