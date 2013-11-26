@@ -4,10 +4,6 @@
     <pathelement path="${sdk.dir}/tools/lib/anttasks.jar" />
   </path>
 
-  <taskdef name="xpath"
-    classname="com.android.ant.XPathTask"
-    classpathref="android.antlibs" />
-
   <target name="-post-compile">
     <xpath input="${android.library.reference.1}/AndroidManifest.xml" expression="/manifest/@android:versionName"
       output="versionName" default="unknown"/>
